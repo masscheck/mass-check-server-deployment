@@ -18,11 +18,10 @@ const app = express();
 //     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 //   });
 // }
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use(cors());
 
 app.use('/api', downloadPrivateKeyRoute);
 app.use('/api', createAcc);

@@ -4,9 +4,9 @@ import cors from 'cors';
 // import enforce from 'express-sslify';
 
 // Route
-import downloadPrivateKeyRoute from './src/Route/DownloadPrivateKey';
-import createAcc from './src/Route/CreateAcc';
-import getUserInfo from './src/Route/GetUserInfo';
+import downloadPrivateKeyRoute from './Route/DownloadPrivateKey';
+import createAcc from './Route/CreateAcc';
+import getUserInfo from './Route/GetUserInfo';
 
 const app = express();
 

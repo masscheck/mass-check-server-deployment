@@ -1,12 +1,17 @@
+// import express from 'express';
 const express = require('express');
 const cors = require('cors');
 // import path from 'path';
 // import enforce from 'express-sslify';
 
 // Route
-import downloadPrivateKeyRoute from './Route/DownloadPrivateKey';
-import createAcc from './Route/CreateAcc';
-import getUserInfo from './Route/GetUserInfo';
+// import downloadPrivateKeyRoute from './Route/DownloadPrivateKey';
+// import createAcc from './Route/CreateAcc';
+// import getUserInfo from './Route/GetUserInfo';
+
+const downloadPrivateKeyRoute = require('./Route/DownloadPrivateKey');
+const createAcc = require('./Route/CreateAcc');
+const getUserInfo = require('./Route/GetUserInfo');
 
 const app = express();
 
@@ -24,10 +29,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.use('/api', downloadPrivateKeyRoute);
 app.use('/api', createAcc);

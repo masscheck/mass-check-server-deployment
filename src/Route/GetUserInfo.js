@@ -1,5 +1,8 @@
-import express from 'express';
-import { getUsername } from '../Util/FirebaseUtils';
+// import express from 'express';
+// import { getUsername } from '../Util/FirebaseUtils';
+
+const express = require('express');
+const { getUsername } = require('../Util/FirebaseUtils');
 
 const router = express.Router();
 
@@ -20,4 +23,6 @@ router.post('/get-username', async (req, res, next) => {
   res.status(200).json({ username: username });
 });
 
-export default router;
+// export default router;
+
+module.exports = router;

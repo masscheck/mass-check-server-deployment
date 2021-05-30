@@ -1,5 +1,8 @@
-import express from 'express';
-import { createAcc } from '../Util/FirebaseUtils';
+// import express from 'express';
+// import { createAcc } from '../Util/FirebaseUtils';
+
+const express = require('express');
+const { createAcc } = require('../Util/FirebaseUtils');
 
 const router = express.Router();
 
@@ -32,4 +35,5 @@ router.post('/create-acc', async (req, res, next) => {
 //   res.status(200).json({ msg: result });
 // });
 
-export default router;
+// export default router;
+module.exports = router;

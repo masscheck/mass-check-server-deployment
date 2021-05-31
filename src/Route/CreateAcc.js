@@ -1,6 +1,3 @@
-// import express from 'express';
-// import { createAcc } from '../Util/FirebaseUtils';
-
 const express = require('express');
 const { createAcc } = require('../Util/FirebaseUtils');
 
@@ -20,20 +17,4 @@ router.post('/create-acc', async (req, res, next) => {
   res.status(200).json({ msg: 'success' });
 });
 
-// router.post('/is-new-acc', async (req, res, next) => {
-//   let { uid } = req.body;
-//   console.log(req.body);
-//   let result;
-
-//   try {
-//     result = await isNewAcc(uid);
-//   } catch (err) {
-//     console.log(err);
-//     throw err;
-//   }
-
-//   res.status(200).json({ msg: result });
-// });
-
-// export default router;
 module.exports = router;

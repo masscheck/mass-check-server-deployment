@@ -1,28 +1,23 @@
-// import express from 'express';
-// import { getUsername } from '../Util/FirebaseUtils';
-
 const express = require('express');
-const { getUsername } = require('../Util/FirebaseUtils');
+const { getUserInfo } = require('../Util/FirebaseUtils');
 
 const router = express.Router();
 
-router.post('/get-username', async (req, res, next) => {
+router.post('/get-userinfo', async (req, res, next) => {
   let { uid } = req.body;
   console.log(req.body);
-  let username;
+  let userInfo;
 
   try {
-    username = await getUsername(uid);
+    userInfo = await getUserInfo(uid);
 
-    console.log(username);
+    console.log(userInfo);
   } catch (err) {
     console.log(err);
     throw err;
   }
 
-  res.status(200).json({ username: username });
+  res.status(200).json({ userInfo: userInfo });
 });
-
-// export default router;
 
 module.exports = router;
